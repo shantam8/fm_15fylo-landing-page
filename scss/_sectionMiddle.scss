@@ -1,0 +1,124 @@
+section.middle {
+  margin-top: 2rem;
+  padding-bottom: 7rem;
+  background-color: $lightGrayishBlue;
+  text-align: center;
+
+  .bgCurve {
+    background-color: white;
+    height: 4rem;
+    width: 100%;
+
+    svg {
+      width: 100%;
+    }
+
+    .mobile {
+      display: none;
+    }
+  }
+  .image {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 2rem;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  h2 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+  }
+
+  p {
+    margin-top: 1rem;
+    padding: 0 1rem;
+    font-size: 0.8rem;
+    text-align: left;
+    color: $desaturatedBlue;
+  }
+
+  .link {
+    width: 160px;
+    margin: 0 auto;
+    padding-bottom: 0.5rem;
+
+    border-bottom: 2px solid $moderateCyan;
+
+    a {
+      color: $moderateCyan;
+      text-decoration: none;
+      font-size: 0.8rem;
+
+      .linkSvg {
+        display: inline-block;
+        position: relative;
+        top: 0.5rem;
+        margin-left: 0.5rem;
+
+        svg {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  article {
+    position: relative;
+    width: 70%;
+    margin: 3rem auto 0 auto;
+    padding: 2rem 1rem 1rem 1rem;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 0 20px 0 darkgray;
+
+    .quoteSvg{
+      position: absolute;
+      top: 22px;
+      left: 32px;
+      width: 18px;
+      height: 18px;
+    }
+
+    p {
+      color: black;
+      line-height: 1.5rem;
+    }
+
+    .avatar {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      grid-template-rows: 18px 18px;
+      grid-template-areas: "avatar name" "avatar status";
+      justify-items: left;
+      align-items: center;
+
+      .image {
+        grid-area: avatar;
+        height: 36px;
+        width: 36px;
+        padding: 0;
+        img {
+          width: 100%;
+          border-radius: 50%;
+        }
+      }
+
+      h3 {
+        grid-area: name;
+        font-size: 0.8rem;
+      }
+      p {
+        grid-area: status;
+        font-size: 0.5rem;
+        color: black;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+}

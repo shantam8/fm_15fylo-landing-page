@@ -1,9 +1,380 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+header {
+  margin: 1rem 1rem 0 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: "logo . features team sign-in";
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header div.image {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: logo;
+  width: 85px;
+}
+
+header div.image img {
+  width: 100%;
+}
+
+header p {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #585989;
+}
+
+header .headerFeatures {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: features;
+}
+
+header .headerTeam {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: team;
+}
+
+header .headerSignin {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  grid-area: sign-in;
+}
+
+section.top {
+  margin: 7rem 1rem 0 1rem;
+  text-align: center;
+}
+
+section.top .image {
+  width: 80%;
+  margin: 0 auto;
+}
+
+section.top .image img {
+  width: 100%;
+}
+
+section.top h1 {
+  padding-top: 2rem;
+  font-size: 1.5rem;
+}
+
+section.top p {
+  padding: 1.8rem;
+  font-size: 0.8rem;
+}
+
+section.top input {
+  height: 2.5rem;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-radius: 4px;
+  border: 1px solid black;
+  color: #bfbfbf;
+}
+
+section.top button {
+  height: 2.5rem;
+  width: 90%;
+  margin: 0 auto;
+  border: none;
+  border-radius: 4px;
+  background-color: #3065f8;
+  color: white;
+}
+
+section.middle {
+  margin-top: 2rem;
+  padding-bottom: 7rem;
+  background-color: #f6f6fe;
+  text-align: center;
+}
+
+section.middle .bgCurve {
+  background-color: white;
+  height: 4rem;
+  width: 100%;
+}
+
+section.middle .bgCurve svg {
+  width: 100%;
+}
+
+section.middle .bgCurve .mobile {
+  display: none;
+}
+
+section.middle .image {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+
+section.middle .image img {
+  width: 100%;
+}
+
+section.middle h2 {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+section.middle p {
+  margin-top: 1rem;
+  padding: 0 1rem;
+  font-size: 0.8rem;
+  text-align: left;
+  color: #585989;
+}
+
+section.middle .link {
+  width: 160px;
+  margin: 0 auto;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #3c9f8f;
+}
+
+section.middle .link a {
+  color: #3c9f8f;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+section.middle .link a .linkSvg {
+  display: inline-block;
+  position: relative;
+  top: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+section.middle .link a .linkSvg svg {
+  width: 100%;
+}
+
+section.middle article {
+  position: relative;
+  width: 70%;
+  margin: 3rem auto 0 auto;
+  padding: 2rem 1rem 1rem 1rem;
+  background: white;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 20px 0 darkgray;
+          box-shadow: 0 0 20px 0 darkgray;
+}
+
+section.middle article .quoteSvg {
+  position: absolute;
+  top: 22px;
+  left: 32px;
+  width: 18px;
+  height: 18px;
+}
+
+section.middle article p {
+  color: black;
+  line-height: 1.5rem;
+}
+
+section.middle article .avatar {
+  margin-top: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 60px 1fr;
+      grid-template-columns: 60px 1fr;
+  -ms-grid-rows: 18px 18px;
+      grid-template-rows: 18px 18px;
+      grid-template-areas: "avatar name" "avatar status";
+  justify-items: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.middle article .avatar .image {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: avatar;
+  height: 36px;
+  width: 36px;
+  padding: 0;
+}
+
+section.middle article .avatar .image img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+section.middle article .avatar h3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: name;
+  font-size: 0.8rem;
+}
+
+section.middle article .avatar p {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: status;
+  font-size: 0.5rem;
+  color: black;
+  padding: 0;
+  margin: 0;
+}
+
+section.bottom {
+  padding: 3rem;
+  background-color: #585989;
+  text-align: center;
+  color: white;
+}
+
+section.bottom h2 {
+  font-size: 1rem;
+}
+
+section.bottom p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+}
+
+section.bottom input {
+  height: 2.5rem;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-radius: 4px;
+  border: 1px solid black;
+  color: #bfbfbf;
+  font-size: 0.7rem;
+}
+
+section.bottom button {
+  height: 2.5rem;
+  width: 90%;
+  margin: 0 auto;
+  border: none;
+  border-radius: 4px;
+  background-color: #3065f8;
+  color: white;
+  font-size: 0.7rem;
+}
+
+footer {
+  padding: 3rem 2rem;
+  background-color: #070439;
+  color: white;
+}
+
+footer .svg {
+  margin-bottom: 2rem;
+}
+
+footer .contactItem {
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  font-size: 0.8rem;
+}
+
+footer .contactItem img {
+  width: 18px;
+}
+
+footer nav {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 0.8rem;
+}
+
+footer nav ul {
+  list-style: none;
+  line-height: 2rem;
+}
+
+footer .socialMedia {
+  width: 115px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .socialMedia .svg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+footer .socialMedia .svg svg {
+  width: 50%;
+  height: 50%;
+}
+
+footer .socialMedia .svg svg path {
+  fill: white;
+}
+
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+button,
+header {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
 }
 /*# sourceMappingURL=main.css.map */

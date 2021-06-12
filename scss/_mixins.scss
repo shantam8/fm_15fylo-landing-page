@@ -1,0 +1,28 @@
+
+
+@mixin breakpoint($screenWidth) {
+  @media screen and (min-width: (map-get($breakpoints, $screenWidth))) {
+    @content;
+  }
+}
+
+@mixin inputStyle {
+  height: 2.5rem;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-radius: 4px;
+  border: 1px solid black;
+  color: $lightGray;
+}
+
+@mixin buttonStyle {
+  height: 2.5rem;
+  width: 90%;
+  margin: 0 auto;
+  border: none;
+  border-radius: 4px;
+  background-color: $brightBlue;
+  color: white;
+}

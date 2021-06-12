@@ -1,0 +1,26 @@
+section.bottom {
+  padding: 3rem;
+  background-color: $desaturatedBlue;
+  text-align: center;
+  color: white;
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+  }
+
+  input {
+    @include inputStyle;
+    font-size: 0.7rem;
+  }
+
+  button {
+    @include buttonStyle;
+    font-size: 0.7rem;
+  }
+}

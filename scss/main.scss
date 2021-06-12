@@ -2,14 +2,29 @@
 @import "mixins";
 @import "variables";
 
+@import "header";
+@import "sectionTop";
+@import "sectionMiddle";
+@import "sectionBottom";
+@import "footer";
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    //font-family: 'Open Sans', sans-serif;
-    //font-family: 'Raleway', sans-serif;
+//2:00
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: "Open Sans", sans-serif;
+}
 
+h1,
+h2,
+h3,
+button,
+header {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+}

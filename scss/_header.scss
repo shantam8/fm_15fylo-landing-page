@@ -1,0 +1,35 @@
+header {
+  margin: 1rem 1rem 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: "logo . features team sign-in";
+  justify-items: center;
+  align-items: center;
+
+  div.image {
+    grid-area: logo;
+    width: 85px;
+    img {
+      width: 100%;
+    }
+  }
+
+  p {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: $desaturatedBlue
+  }
+
+  .headerFeatures {
+    grid-area: features;
+  }
+
+  .headerTeam {
+    grid-area: team;
+  }
+
+  .headerSignin {
+    grid-area: sign-in;
+  }
+}

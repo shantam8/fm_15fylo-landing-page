@@ -7,8 +7,12 @@ $moderateCyan: hsl(170, 45%, 43%);
 $lightGrayishBlue: hsl(240, 75%, 98%);
 $lightGray: hsl(0, 0%, 75%);
 
-
-
-$screenSmall: 40rem; //640px
-$screenMedium: 64rem; //1024px
-$screenLarge: 90rem; //1440px
+$breakpoints: (
+  "small": 40rem,
+  //640px
+  "medium": 64rem,
+  //1024px
+  "large": 90rem,
+  //1440px
+);
+// 0:40min

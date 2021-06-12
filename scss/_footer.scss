@@ -1,0 +1,61 @@
+footer {
+  padding: 3rem 2rem;
+  background-color: $veryDarkBlue;
+  color: white;
+
+  .svg {
+    margin-bottom: 2rem;
+  }
+
+  .contactItem {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.8rem;
+
+    img {
+      width: 18px;
+    }
+  }
+
+  nav {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 0.8rem;
+    ul {
+      list-style: none;
+
+      line-height: 2rem;
+    }
+  }
+
+  .socialMedia {
+    width: 115px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .svg {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid white;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+
+      svg {
+        width: 50%;
+        height: 50%;
+
+        path {
+          fill: white;
+        }
+      }
+    }
+  }
+}
