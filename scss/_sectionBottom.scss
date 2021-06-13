@@ -4,23 +4,62 @@ section.bottom {
   text-align: center;
   color: white;
 
+  @include breakpoint(medium) {
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "header input" "paragraph button";
+    align-items: center;
+    text-align: left;
+    column-gap: 11rem;
+  }
+
   h2 {
+    grid-area: header;
     font-size: 1rem;
+
+    @include breakpoint(medium) {
+      font-size: 2rem;
+    }
   }
 
   p {
+    grid-area: paragraph;
     margin-top: 1rem;
     margin-bottom: 1rem;
     font-size: 0.8rem;
+
+    @include breakpoint(small) {
+      width: 70%;
+      margin: 1rem auto;
+      font-size: 0.9rem;
+    }
+
+    @include breakpoint(medium) {
+      width: 100%;
+      margin: unset;
+    }
   }
 
   input {
+    grid-area: input;
     @include inputStyle;
     font-size: 0.7rem;
+
+    @include breakpoint(medium) {
+      font-size: 0.8rem;
+    }
   }
 
   button {
+    grid-area: button;
     @include buttonStyle;
     font-size: 0.7rem;
+
+    @include breakpoint(medium) {
+      width: 40%;
+      font-size: 0.8rem;
+    }
   }
 }

@@ -15,11 +15,35 @@ header {
           align-items: center;
 }
 
+@media screen and (min-width: 40rem) {
+  header {
+    margin: 3rem 3rem 0 3rem;
+    -ms-grid-columns: (1fr)[7];
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-areas: "logo . . . features team sign-in";
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  header {
+    margin: 3rem 3rem 0 3rem;
+    -ms-grid-columns: (1fr)[8];
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-areas: "logo . . . . features team sign-in";
+  }
+}
+
 header div.image {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: logo;
   width: 85px;
+}
+
+@media screen and (min-width: 64rem) {
+  header div.image {
+    width: 120px;
+  }
 }
 
 header div.image img {
@@ -30,6 +54,12 @@ header p {
   font-size: 0.8rem;
   font-weight: 400;
   color: #585989;
+}
+
+@media screen and (min-width: 64rem) {
+  header p {
+    font-size: 1rem;
+  }
 }
 
 header .headerFeatures {
@@ -55,7 +85,27 @@ section.top {
   text-align: center;
 }
 
+@media screen and (min-width: 64rem) {
+  section.top {
+    margin: 5rem 3rem 0 3rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 1.5fr 4fr;
+        grid-template-columns: 2fr 1.5fr 4fr;
+    -ms-grid-rows: 1fr auto auto auto 1fr;
+        grid-template-rows: 1fr auto auto auto 1fr;
+        grid-template-areas: ". . image" "h1 h1 image" "p p image" "input btn image" ". . image";
+    justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 1rem;
+    text-align: left;
+  }
+}
+
 section.top .image {
+  grid-area: image;
   width: 80%;
   margin: 0 auto;
 }
@@ -65,16 +115,51 @@ section.top .image img {
 }
 
 section.top h1 {
+  grid-area: h1;
   padding-top: 2rem;
   font-size: 1.5rem;
 }
 
+@media screen and (min-width: 40rem) {
+  section.top h1 {
+    width: 70%;
+    margin: 0 auto;
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  section.top h1 {
+    width: unset;
+    margin: unset;
+    font-size: 1.6rem;
+  }
+}
+
 section.top p {
+  grid-area: p;
   padding: 1.8rem;
   font-size: 0.8rem;
 }
 
+@media screen and (min-width: 40rem) {
+  section.top p {
+    width: 70%;
+    margin: 0 auto;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  section.top p {
+    width: unset;
+    padding: unset;
+    font-size: 1.1rem;
+  }
+}
+
 section.top input {
+  grid-area: input;
   height: 2.5rem;
   width: 90%;
   margin: 0 auto;
@@ -85,7 +170,21 @@ section.top input {
   color: #bfbfbf;
 }
 
+@media screen and (min-width: 40rem) {
+  section.top input {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  section.top input {
+    width: 100%;
+    margin: unset;
+  }
+}
+
 section.top button {
+  grid-area: btn;
   height: 2.5rem;
   width: 90%;
   margin: 0 auto;
@@ -95,11 +194,44 @@ section.top button {
   color: white;
 }
 
+@media screen and (min-width: 40rem) {
+  section.top button {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  section.top button {
+    width: 100%;
+    margin: unset;
+  }
+}
+
 section.middle {
   margin-top: 2rem;
   padding-bottom: 7rem;
   background-color: #f6f6fe;
   text-align: center;
+}
+
+@media screen and (min-width: 64rem) {
+  section.middle {
+    margin-top: 4rem;
+    position: relative;
+    padding: 7rem 3rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1r 1fr 2fr;
+        grid-template-columns: 1r 1fr 2fr;
+    -ms-grid-rows: (auto)[5];
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas: "header header image" "paragraph1 paragraph1 image" "paragraph2 paragraph2 image" "link . image" "article . image";
+    justify-items: left;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 1rem;
+  }
 }
 
 section.middle .bgCurve {
@@ -108,18 +240,29 @@ section.middle .bgCurve {
   width: 100%;
 }
 
+@media screen and (min-width: 64rem) {
+  section.middle .bgCurve {
+    position: absolute;
+    height: 6rem;
+    top: 0;
+  }
+}
+
 section.middle .bgCurve svg {
   width: 100%;
 }
 
-section.middle .bgCurve .mobile {
-  display: none;
-}
-
 section.middle .image {
+  grid-area: image;
   width: 80%;
   margin: 0 auto;
   padding-top: 2rem;
+}
+
+@media screen and (min-width: 64rem) {
+  section.middle .image {
+    width: 100%;
+  }
 }
 
 section.middle .image img {
@@ -127,24 +270,58 @@ section.middle .image img {
 }
 
 section.middle h2 {
+  grid-area: header;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
   font-size: 1rem;
 }
 
+@media screen and (min-width: 64rem) {
+  section.middle h2 {
+    margin: unset;
+    font-size: 2rem;
+  }
+}
+
 section.middle p {
-  margin-top: 1rem;
+  width: 80%;
+  margin: 1rem auto 0 auto;
   padding: 0 1rem;
   font-size: 0.8rem;
   text-align: left;
   color: #585989;
 }
 
+@media screen and (min-width: 64rem) {
+  section.middle p {
+    margin: unset;
+    padding: unset;
+    font-size: 1.1rem;
+  }
+}
+
+section.middle .paragraph1 {
+  grid-area: paragraph1;
+}
+
+section.middle .paragraph2 {
+  grid-area: paragraph2;
+}
+
 section.middle .link {
+  grid-area: link;
   width: 160px;
   margin: 0 auto;
+  margin-top: 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid #3c9f8f;
+}
+
+@media screen and (min-width: 64rem) {
+  section.middle .link {
+    margin: unset;
+    width: auto;
+  }
 }
 
 section.middle .link a {
@@ -153,11 +330,21 @@ section.middle .link a {
   font-size: 0.8rem;
 }
 
+@media screen and (min-width: 64rem) {
+  section.middle .link a {
+    font-size: 0.9rem;
+  }
+}
+
 section.middle .link a .linkSvg {
+  height: 23px;
+  width: 23px;
   display: inline-block;
   position: relative;
   top: 0.5rem;
   margin-left: 0.5rem;
+  background-color: white;
+  border-radius: 50%;
 }
 
 section.middle .link a .linkSvg svg {
@@ -165,6 +352,7 @@ section.middle .link a .linkSvg svg {
 }
 
 section.middle article {
+  grid-area: article;
   position: relative;
   width: 70%;
   margin: 3rem auto 0 auto;
@@ -175,6 +363,15 @@ section.middle article {
           box-shadow: 0 0 20px 0 darkgray;
 }
 
+@media screen and (min-width: 64rem) {
+  section.middle article {
+    margin: unset;
+    margin-top: 1rem;
+    width: 60%;
+    padding: 2rem;
+  }
+}
+
 section.middle article .quoteSvg {
   position: absolute;
   top: 22px;
@@ -183,9 +380,26 @@ section.middle article .quoteSvg {
   height: 18px;
 }
 
+@media screen and (min-width: 64rem) {
+  section.middle article .quoteSvg {
+    margin: unset;
+    top: 15px;
+    left: 30px;
+  }
+}
+
 section.middle article p {
+  width: initial;
+  margin: 1rem auto 1.5rem auto;
   color: black;
   line-height: 1.5rem;
+}
+
+@media screen and (min-width: 64rem) {
+  section.middle article p {
+    margin: unset;
+    font-size: 0.8rem;
+  }
 }
 
 section.middle article .avatar {
@@ -203,6 +417,13 @@ section.middle article .avatar {
           align-items: center;
 }
 
+@media screen and (min-width: 64rem) {
+  section.middle article .avatar {
+    -ms-grid-columns: 52px 1fr;
+        grid-template-columns: 52px 1fr;
+  }
+}
+
 section.middle article .avatar .image {
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
@@ -211,6 +432,14 @@ section.middle article .avatar .image {
   height: 36px;
   width: 36px;
   padding: 0;
+}
+
+@media screen and (min-width: 64rem) {
+  section.middle article .avatar .image {
+    margin: unset;
+    width: 100%;
+    padding-right: 1rem;
+  }
 }
 
 section.middle article .avatar .image img {
@@ -225,14 +454,27 @@ section.middle article .avatar h3 {
   font-size: 0.8rem;
 }
 
+@media screen and (min-width: 64rem) {
+  section.middle article .avatar h3 {
+    margin: unset;
+  }
+}
+
 section.middle article .avatar p {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: status;
+  margin: 0;
+  padding: 0;
   font-size: 0.5rem;
   color: black;
-  padding: 0;
-  margin: 0;
+}
+
+@media screen and (min-width: 64rem) {
+  section.middle article .avatar p {
+    margin: unset;
+    width: 50%;
+  }
 }
 
 section.bottom {
@@ -242,17 +484,60 @@ section.bottom {
   color: white;
 }
 
+@media screen and (min-width: 64rem) {
+  section.bottom {
+    padding: 4rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "header input" "paragraph button";
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: left;
+    -webkit-column-gap: 11rem;
+            column-gap: 11rem;
+  }
+}
+
 section.bottom h2 {
+  grid-area: header;
   font-size: 1rem;
 }
 
+@media screen and (min-width: 64rem) {
+  section.bottom h2 {
+    font-size: 2rem;
+  }
+}
+
 section.bottom p {
+  grid-area: paragraph;
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-size: 0.8rem;
 }
 
+@media screen and (min-width: 40rem) {
+  section.bottom p {
+    width: 70%;
+    margin: 1rem auto;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  section.bottom p {
+    width: 100%;
+    margin: unset;
+  }
+}
+
 section.bottom input {
+  grid-area: input;
   height: 2.5rem;
   width: 90%;
   margin: 0 auto;
@@ -264,7 +549,27 @@ section.bottom input {
   font-size: 0.7rem;
 }
 
+@media screen and (min-width: 40rem) {
+  section.bottom input {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  section.bottom input {
+    width: 100%;
+    margin: unset;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  section.bottom input {
+    font-size: 0.8rem;
+  }
+}
+
 section.bottom button {
+  grid-area: button;
   height: 2.5rem;
   width: 90%;
   margin: 0 auto;
@@ -275,17 +580,64 @@ section.bottom button {
   font-size: 0.7rem;
 }
 
+@media screen and (min-width: 40rem) {
+  section.bottom button {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  section.bottom button {
+    width: 100%;
+    margin: unset;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  section.bottom button {
+    width: 40%;
+    font-size: 0.8rem;
+  }
+}
+
 footer {
-  padding: 3rem 2rem;
+  padding: 3rem 2rem 2rem 2rem;
   background-color: #070439;
   color: white;
 }
 
-footer .svg {
+@media screen and (min-width: 40rem) {
+  footer {
+    padding: 4rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  footer {
+    padding: 7rem;
+  }
+}
+
+footer .logoSvg {
   margin-bottom: 2rem;
 }
 
-footer .contactItem {
+@media screen and (min-width: 64rem) {
+  footer .contactInfo {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr (1fr)[3];
+        grid-template-columns: 1fr repeat(3, 1fr);
+    -ms-grid-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: "phone phone nav1 nav2 socialMedia" "mail mail nav1 nav2 ." ". . nav1 nav2 .";
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+}
+
+footer .contactInfo .contactItem {
   margin-bottom: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -300,23 +652,66 @@ footer .contactItem {
   font-size: 0.8rem;
 }
 
-footer .contactItem img {
+@media screen and (min-width: 64rem) {
+  footer .contactInfo .contactItem {
+    margin: unset;
+    font-size: 1rem;
+  }
+}
+
+footer .contactInfo .contactItem img {
   width: 18px;
 }
 
-footer nav {
+footer .contactInfo .phone {
+  grid-area: phone;
+}
+
+footer .contactInfo .mail {
+  grid-area: mail;
+}
+
+footer .contactInfo nav {
   margin-top: 2rem;
   margin-bottom: 2rem;
   font-size: 0.8rem;
 }
 
-footer nav ul {
+@media screen and (min-width: 64rem) {
+  footer .contactInfo nav {
+    margin: unset;
+    font-size: 1rem;
+  }
+}
+
+footer .contactInfo nav ul {
   list-style: none;
   line-height: 2rem;
 }
 
-footer .socialMedia {
-  width: 115px;
+@media screen and (min-width: 64rem) {
+  footer .contactInfo nav ul {
+    line-height: unset;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  footer .contactInfo nav ul li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+footer .contactInfo .nav1 {
+  grid-area: nav1;
+}
+
+footer .contactInfo .nav2 {
+  grid-area: nav2;
+}
+
+footer .contactInfo .socialMedia {
+  grid-area: socialMedia;
+  width: 150px;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -333,7 +728,13 @@ footer .socialMedia {
           align-items: center;
 }
 
-footer .socialMedia .svg {
+@media screen and (min-width: 64rem) {
+  footer .contactInfo .socialMedia {
+    margin: unset;
+  }
+}
+
+footer .contactInfo .socialMedia .svg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -345,16 +746,16 @@ footer .socialMedia .svg {
           align-items: center;
   border: 1px solid white;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 }
 
-footer .socialMedia .svg svg {
+footer .contactInfo .socialMedia .svg svg {
   width: 50%;
   height: 50%;
 }
 
-footer .socialMedia .svg svg path {
+footer .contactInfo .socialMedia .svg svg path {
   fill: white;
 }
 

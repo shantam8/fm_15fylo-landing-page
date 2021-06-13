@@ -2,7 +2,25 @@ section.top {
   margin: 7rem 1rem 0 1rem;
   text-align: center;
 
+  @include breakpoint(medium) {
+    margin: 5rem 3rem 0 3rem;
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 4fr;
+    grid-template-rows: 1fr auto auto auto 1fr;
+    grid-template-areas:
+      ". . image"
+      "h1 h1 image"
+      "p p image"
+      "input btn image"
+      ". . image";
+    justify-items: center;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+  }
+
   .image {
+    grid-area: image;
     width: 80%;
     margin: 0 auto;
 
@@ -12,20 +30,47 @@ section.top {
   }
 
   h1 {
+    grid-area: h1;
     padding-top: 2rem;
     font-size: 1.5rem;
+
+    @include breakpoint(small) {
+      width: 70%;
+      margin: 0 auto;
+      font-size: 1.8rem;
+    }
+
+    @include breakpoint(medium) {
+      width: unset;
+      margin: unset;
+      font-size: 1.6rem;
+    }
   }
 
   p {
+    grid-area: p;
     padding: 1.8rem;
     font-size: 0.8rem;
+
+    @include breakpoint(small) {
+      width: 70%;
+      margin: 0 auto;
+      font-size: 0.9rem;
+    }
+
+    @include breakpoint(medium) {
+      width: unset;
+      padding: unset;
+      font-size: 1.1rem;    }
   }
 
   input {
+    grid-area: input;
     @include inputStyle;
   }
 
   button {
+    grid-area: btn;
     @include buttonStyle;
   }
 }

@@ -1,59 +1,121 @@
 footer {
-  padding: 3rem 2rem;
+  padding: 3rem 2rem 2rem 2rem;
   background-color: $veryDarkBlue;
   color: white;
 
-  .svg {
+  @include breakpoint(small) {
+    padding: 4rem;
+  }
+
+  @include breakpoint(medium) {
+    padding: 7rem;
+  }
+
+  .logoSvg {
     margin-bottom: 2rem;
   }
 
-  .contactItem {
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 1rem;
-    font-size: 0.8rem;
-
-    img {
-      width: 18px;
+  .contactInfo {
+    @include breakpoint(medium) {
+      display: grid;
+      grid-template-columns: 1fr repeat(3, 1fr);
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas:
+        "phone phone nav1 nav2 socialMedia"
+        "mail mail nav1 nav2 ."
+        ". . nav1 nav2 .";
+      align-items: start;
     }
-  }
 
-  nav {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    font-size: 0.8rem;
-    ul {
-      list-style: none;
-
-      line-height: 2rem;
-    }
-  }
-
-  .socialMedia {
-    width: 115px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    .svg {
+    .contactItem {
+      margin-bottom: 1rem;
       display: flex;
-      justify-content: center;
+      justify-content: start;
       align-items: center;
-      border: 1px solid white;
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
+      gap: 1rem;
+      font-size: 0.8rem;
 
-      svg {
-        width: 50%;
-        height: 50%;
+      @include breakpoint(medium) {
+        margin: unset;
+        font-size: 1rem;
+      }
 
-        path {
-          fill: white;
+      img {
+        width: 18px;
+      }
+    }
+
+    .phone {
+      grid-area: phone;
+    }
+
+    .mail {
+      grid-area: mail;
+    }
+
+    nav {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      font-size: 0.8rem;
+
+      @include breakpoint(medium) {
+        margin: unset;
+        font-size: 1rem;
+      }
+
+      ul {
+        list-style: none;
+        line-height: 2rem;
+
+        @include breakpoint(medium) {
+          line-height: unset;
+        }
+
+        li{
+          @include breakpoint(medium) {
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+
+    .nav1 {
+      grid-area: nav1;
+    }
+
+    .nav2 {
+      grid-area: nav2;
+    }
+
+    .socialMedia {
+      grid-area: socialMedia;
+      width: 150px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      @include breakpoint(medium) {
+        margin: unset;
+      }
+
+      .svg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid white;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+
+        svg {
+          width: 50%;
+          height: 50%;
+
+          path {
+            fill: white;
+          }
         }
       }
     }
