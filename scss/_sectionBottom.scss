@@ -5,14 +5,19 @@ section.bottom {
   color: white;
 
   @include breakpoint(medium) {
-    padding: 4rem;
+    padding: 5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: "header input" "paragraph button";
     align-items: center;
     text-align: left;
-    column-gap: 11rem;
+    column-gap: 14rem;
+  }
+
+  @include breakpoint(large) {
+    padding: 6rem;
+    column-gap: 18rem;
   }
 
   h2 {
@@ -42,7 +47,7 @@ section.bottom {
     }
   }
 
-  input {
+  .inputWrapper {
     grid-area: input;
     @include inputStyle;
     font-size: 0.7rem;
@@ -50,12 +55,16 @@ section.bottom {
     @include breakpoint(medium) {
       font-size: 0.8rem;
     }
+
+    .error {
+      @include errorBar;
+    }
   }
 
   button {
     grid-area: button;
-    @include buttonStyle;
     font-size: 0.7rem;
+    @include buttonStyle;
 
     @include breakpoint(medium) {
       width: 40%;

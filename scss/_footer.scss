@@ -22,9 +22,14 @@ footer {
       grid-template-rows: 1fr 1fr 1fr;
       grid-template-areas:
         "phone phone nav1 nav2 socialMedia"
-        "mail mail nav1 nav2 ."
+        "mail mail nav1 nav2 socialMedia"
         ". . nav1 nav2 .";
       align-items: start;
+      column-gap: 6rem;
+    }
+
+    @include breakpoint(large){
+      column-gap: 9rem;
     }
 
     .contactItem {
@@ -71,7 +76,9 @@ footer {
           line-height: unset;
         }
 
-        li{
+        li {
+          @include hoverEffect(normal);
+
           @include breakpoint(medium) {
             margin-bottom: 0.5rem;
           }
@@ -109,10 +116,11 @@ footer {
         width: 40px;
         height: 40px;
 
+        @include hoverEffect(normal);
+
         svg {
           width: 50%;
           height: 50%;
-
           path {
             fill: white;
           }

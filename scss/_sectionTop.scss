@@ -5,7 +5,7 @@ section.top {
   @include breakpoint(medium) {
     margin: 5rem 3rem 0 3rem;
     display: grid;
-    grid-template-columns: 2fr 1.5fr 4fr;
+    grid-template-columns: 2fr 1.5fr 5fr;
     grid-template-rows: 1fr auto auto auto 1fr;
     grid-template-areas:
       ". . image"
@@ -61,13 +61,21 @@ section.top {
     @include breakpoint(medium) {
       width: unset;
       padding: unset;
-      font-size: 1.1rem;    }
+      font-size: 1.1rem;
+    }
   }
 
-  input {
-    grid-area: input;
-    @include inputStyle;
-  }
+ 
+    .inputWrapper {
+      grid-area: input;
+      @include inputStyle;
+
+      .error{
+        @include errorBar;
+      }
+    }
+
+  
 
   button {
     grid-area: btn;

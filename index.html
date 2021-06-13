@@ -12,7 +12,7 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="./css/main.css" />
-    <script src="./js/main.js"></script>
+    <script defer src="./js/main.js"></script>
 
     <title>Frontend Mentor | Fylo landing page with two column layout</title>
   </head>
@@ -38,12 +38,19 @@
         co-workers.
       </p>
 
-      <input
-        type="email"
-        placeholder="Enter your email."
-        aria-label="field_email"
-      />
-      <button>Get Started</button>
+      <div class="inputWrapper">
+        <input
+          id="topInputMail"
+          type="email"
+          placeholder="Enter your email."
+          aria-label="field_email"
+        />
+        <div id="topError" class="error">
+          Please provide a valid email address.
+        </div>
+      </div>
+
+      <button id="topBtn">Get Started</button>
     </section>
 
     <section class="middle">
@@ -83,14 +90,14 @@
         <a href="#">
           See how Fylo works
           <div class="linkSvg">
-
-            <svg 
+            <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
               width="24"
               height="24"
             >
-              <path fill="#3c9f8f"
+              <path
+                fill="#3c9f8f"
                 d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"
               />
             </svg>
@@ -139,12 +146,18 @@
         generous. If you have any questions, our support team would be happy to
         help you.
       </p>
-      <input
-        type="email"
-        placeholder="email@example.com"
-        aria-label="field_email"
-      />
-      <button>Get Started For Free</button>
+      <div class="inputWrapper">
+        <input
+          id="bottomInputMail"
+          type="email"
+          placeholder="email@example.com"
+          aria-label="field_email"
+        />
+        <div id="bottomError" class="error">
+          Please provide a valid email address.
+        </div>
+      </div>
+      <button id="bottomBtn">Get Started For Free</button>
     </section>
 
     <footer>

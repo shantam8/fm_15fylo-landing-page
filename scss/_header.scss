@@ -1,4 +1,5 @@
 header {
+  // 3h
   margin: 1rem 1rem 0 1rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -7,28 +8,40 @@ header {
   justify-items: center;
   align-items: center;
 
-  @include breakpoint(small){
+  @include breakpoint(small) {
     margin: 3rem 3rem 0 3rem;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-areas: "logo . . . features team sign-in";
+    grid-template-columns: 60% repeat(3, 1fr);
+    grid-template-areas: "logo features team sign-in";
   }
 
-  @include breakpoint(medium){
+  @include breakpoint(medium) {
     margin: 3rem 3rem 0 3rem;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-areas: "logo . . . . features team sign-in";
+    grid-template-columns: 70% repeat(3, 1fr);
+    grid-template-areas: "logo features team sign-in";
   }
 
-  @include breakpoint(medium){
-
+  @include breakpoint(large) {
+    margin: 4rem 4rem 0 4rem;
+    grid-template-columns: 80% repeat(3, 1fr);
+    grid-template-areas: "logo features team sign-in";
   }
 
   div.image {
     grid-area: logo;
     width: 85px;
 
-    @include breakpoint(medium){
+    @include breakpoint(small) {
+      width: 100px;
+      justify-self: start;
+    }
+
+    @include breakpoint(medium) {
       width: 120px;
+      justify-self: start;
+    }
+
+    @include breakpoint(large) {
+      width: 150px;
     }
 
     img {
@@ -41,9 +54,11 @@ header {
     font-weight: 400;
     color: $desaturatedBlue;
 
-    @include breakpoint(medium){
+    @include breakpoint(medium) {
       font-size: 1rem;
     }
+
+    @include hoverEffect(normal);
   }
 
   .headerFeatures {

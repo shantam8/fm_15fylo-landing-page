@@ -88,12 +88,14 @@ section.middle {
 
   .link {
     grid-area: link;
+    
     width: 160px;
     margin: 0 auto;
     margin-top: 1rem;
     padding-bottom: 0.5rem;
-
     border-bottom: 2px solid $moderateCyan;
+    @include hoverEffect(link);
+
 
     @include breakpoint(medium) {
       margin: unset;

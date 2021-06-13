@@ -18,18 +18,27 @@ header {
 @media screen and (min-width: 40rem) {
   header {
     margin: 3rem 3rem 0 3rem;
-    -ms-grid-columns: (1fr)[7];
-        grid-template-columns: repeat(7, 1fr);
-        grid-template-areas: "logo . . . features team sign-in";
+    -ms-grid-columns: 60% (1fr)[3];
+        grid-template-columns: 60% repeat(3, 1fr);
+        grid-template-areas: "logo features team sign-in";
   }
 }
 
 @media screen and (min-width: 64rem) {
   header {
     margin: 3rem 3rem 0 3rem;
-    -ms-grid-columns: (1fr)[8];
-        grid-template-columns: repeat(8, 1fr);
-        grid-template-areas: "logo . . . . features team sign-in";
+    -ms-grid-columns: 70% (1fr)[3];
+        grid-template-columns: 70% repeat(3, 1fr);
+        grid-template-areas: "logo features team sign-in";
+  }
+}
+
+@media screen and (min-width: 90rem) {
+  header {
+    margin: 4rem 4rem 0 4rem;
+    -ms-grid-columns: 80% (1fr)[3];
+        grid-template-columns: 80% repeat(3, 1fr);
+        grid-template-areas: "logo features team sign-in";
   }
 }
 
@@ -40,9 +49,25 @@ header div.image {
   width: 85px;
 }
 
+@media screen and (min-width: 40rem) {
+  header div.image {
+    width: 100px;
+    -ms-grid-column-align: start;
+        justify-self: start;
+  }
+}
+
 @media screen and (min-width: 64rem) {
   header div.image {
     width: 120px;
+    -ms-grid-column-align: start;
+        justify-self: start;
+  }
+}
+
+@media screen and (min-width: 90rem) {
+  header div.image {
+    width: 150px;
   }
 }
 
@@ -54,12 +79,25 @@ header p {
   font-size: 0.8rem;
   font-weight: 400;
   color: #585989;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
 }
 
 @media screen and (min-width: 64rem) {
   header p {
     font-size: 1rem;
   }
+}
+
+header p:hover {
+  cursor: pointer;
+  background-color: #47a7f5;
+}
+
+header p:active {
+  background-color: lightgreen;
+  -webkit-transition: background-color 0s;
+  transition: background-color 0s;
 }
 
 header .headerFeatures {
@@ -90,8 +128,8 @@ section.top {
     margin: 5rem 3rem 0 3rem;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 2fr 1.5fr 4fr;
-        grid-template-columns: 2fr 1.5fr 4fr;
+    -ms-grid-columns: 2fr 1.5fr 5fr;
+        grid-template-columns: 2fr 1.5fr 5fr;
     -ms-grid-rows: 1fr auto auto auto 1fr;
         grid-template-rows: 1fr auto auto auto 1fr;
         grid-template-areas: ". . image" "h1 h1 image" "p p image" "input btn image" ". . image";
@@ -158,29 +196,43 @@ section.top p {
   }
 }
 
-section.top input {
+section.top .inputWrapper {
   grid-area: input;
+  position: relative;
   height: 2.5rem;
   width: 90%;
   margin: 0 auto;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+section.top .inputWrapper input {
+  height: 100%;
+  width: 100%;
   padding-left: 1rem;
   border-radius: 4px;
   border: 1px solid black;
-  color: #bfbfbf;
 }
 
 @media screen and (min-width: 40rem) {
-  section.top input {
+  section.top .inputWrapper {
     width: 70%;
   }
 }
 
 @media screen and (min-width: 64rem) {
-  section.top input {
+  section.top .inputWrapper {
     width: 100%;
     margin: unset;
   }
+}
+
+section.top .inputWrapper .error {
+  position: absolute;
+  top: 40px;
+  padding-left: 1rem;
+  color: red;
+  font-size: 0.8rem;
+  text-align: left;
 }
 
 section.top button {
@@ -192,6 +244,19 @@ section.top button {
   border-radius: 4px;
   background-color: #3065f8;
   color: white;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+}
+
+section.top button:hover {
+  cursor: pointer;
+  background-color: #47a7f5;
+}
+
+section.top button:active {
+  background-color: lightgreen;
+  -webkit-transition: background-color 0s;
+  transition: background-color 0s;
 }
 
 @media screen and (min-width: 40rem) {
@@ -315,6 +380,19 @@ section.middle .link {
   margin-top: 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid #3c9f8f;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+}
+
+section.middle .link:hover {
+  cursor: pointer;
+  background-color: #5df3db;
+}
+
+section.middle .link:active {
+  background-color: lightgreen;
+  -webkit-transition: background-color 0s;
+  transition: background-color 0s;
 }
 
 @media screen and (min-width: 64rem) {
@@ -486,7 +564,7 @@ section.bottom {
 
 @media screen and (min-width: 64rem) {
   section.bottom {
-    padding: 4rem;
+    padding: 5rem;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr;
@@ -498,8 +576,16 @@ section.bottom {
         -ms-flex-align: center;
             align-items: center;
     text-align: left;
-    -webkit-column-gap: 11rem;
-            column-gap: 11rem;
+    -webkit-column-gap: 14rem;
+            column-gap: 14rem;
+  }
+}
+
+@media screen and (min-width: 90rem) {
+  section.bottom {
+    padding: 6rem;
+    -webkit-column-gap: 18rem;
+            column-gap: 18rem;
   }
 }
 
@@ -536,40 +622,55 @@ section.bottom p {
   }
 }
 
-section.bottom input {
+section.bottom .inputWrapper {
   grid-area: input;
+  position: relative;
   height: 2.5rem;
   width: 90%;
   margin: 0 auto;
-  margin-bottom: 1rem;
-  padding-left: 1rem;
-  border-radius: 4px;
-  border: 1px solid black;
-  color: #bfbfbf;
+  margin-bottom: 2rem;
   font-size: 0.7rem;
 }
 
+section.bottom .inputWrapper input {
+  height: 100%;
+  width: 100%;
+  padding-left: 1rem;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
 @media screen and (min-width: 40rem) {
-  section.bottom input {
+  section.bottom .inputWrapper {
     width: 70%;
   }
 }
 
 @media screen and (min-width: 64rem) {
-  section.bottom input {
+  section.bottom .inputWrapper {
     width: 100%;
     margin: unset;
   }
 }
 
 @media screen and (min-width: 64rem) {
-  section.bottom input {
+  section.bottom .inputWrapper {
     font-size: 0.8rem;
   }
 }
 
+section.bottom .inputWrapper .error {
+  position: absolute;
+  top: 40px;
+  padding-left: 1rem;
+  color: red;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
 section.bottom button {
   grid-area: button;
+  font-size: 0.7rem;
   height: 2.5rem;
   width: 90%;
   margin: 0 auto;
@@ -577,7 +678,19 @@ section.bottom button {
   border-radius: 4px;
   background-color: #3065f8;
   color: white;
-  font-size: 0.7rem;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+}
+
+section.bottom button:hover {
+  cursor: pointer;
+  background-color: #47a7f5;
+}
+
+section.bottom button:active {
+  background-color: lightgreen;
+  -webkit-transition: background-color 0s;
+  transition: background-color 0s;
 }
 
 @media screen and (min-width: 40rem) {
@@ -630,10 +743,19 @@ footer .logoSvg {
         grid-template-columns: 1fr repeat(3, 1fr);
     -ms-grid-rows: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        grid-template-areas: "phone phone nav1 nav2 socialMedia" "mail mail nav1 nav2 ." ". . nav1 nav2 .";
+        grid-template-areas: "phone phone nav1 nav2 socialMedia" "mail mail nav1 nav2 socialMedia" ". . nav1 nav2 .";
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: start;
+    -webkit-column-gap: 6rem;
+            column-gap: 6rem;
+  }
+}
+
+@media screen and (min-width: 90rem) {
+  footer .contactInfo {
+    -webkit-column-gap: 9rem;
+            column-gap: 9rem;
   }
 }
 
@@ -695,6 +817,22 @@ footer .contactInfo nav ul {
   }
 }
 
+footer .contactInfo nav ul li {
+  -webkit-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+}
+
+footer .contactInfo nav ul li:hover {
+  cursor: pointer;
+  background-color: #47a7f5;
+}
+
+footer .contactInfo nav ul li:active {
+  background-color: lightgreen;
+  -webkit-transition: background-color 0s;
+  transition: background-color 0s;
+}
+
 @media screen and (min-width: 64rem) {
   footer .contactInfo nav ul li {
     margin-bottom: 0.5rem;
@@ -748,6 +886,19 @@ footer .contactInfo .socialMedia .svg {
   border-radius: 50%;
   width: 40px;
   height: 40px;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+}
+
+footer .contactInfo .socialMedia .svg:hover {
+  cursor: pointer;
+  background-color: #47a7f5;
+}
+
+footer .contactInfo .socialMedia .svg:active {
+  background-color: lightgreen;
+  -webkit-transition: background-color 0s;
+  transition: background-color 0s;
 }
 
 footer .contactInfo .socialMedia .svg svg {
