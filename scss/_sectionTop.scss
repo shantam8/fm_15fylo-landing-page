@@ -65,17 +65,14 @@ section.top {
     }
   }
 
- 
-    .inputWrapper {
-      grid-area: input;
-      @include inputStyle;
+  .inputWrapper {
+    grid-area: input;
+    @include inputStyle;
 
-      .error{
-        @include errorBar;
-      }
+    .error {
+      @include errorBar;
     }
-
-  
+  }
 
   button {
     grid-area: btn;

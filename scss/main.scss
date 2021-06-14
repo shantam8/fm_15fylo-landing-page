@@ -8,8 +8,6 @@
 @import "sectionBottom";
 @import "footer";
 
-//2:00
-
 * {
   margin: 0;
   padding: 0;
@@ -29,4 +27,16 @@ header {
   font-weight: 700;
 }
 
+.error {
+  display: none;
+}
 
+.redBorder {
+  outline: 2px solid red;
+  border-radius: 4px;
+}
+
+.greenBorder {
+  outline: 2px solid green;
+  border-radius: 4px;
+}

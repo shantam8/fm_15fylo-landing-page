@@ -28,7 +28,7 @@ footer {
       column-gap: 6rem;
     }
 
-    @include breakpoint(large){
+    @include breakpoint(large) {
       column-gap: 9rem;
     }
 
